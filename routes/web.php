@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\DashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('media-informasi', function () {
+//     return view('media');
+// });
+
+Route::get('/', [PublicController::class, 'index']);
+Route::get('/media-informasi', [PublicController::class, 'media']);
+
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function() {
+    Route::get('/', [DashboardController::class, 'index']);
 });
+
+require __DIR__.'/auth.php';
