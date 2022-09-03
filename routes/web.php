@@ -27,8 +27,10 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PublicController::class, 'index']);
 Route::get('/media-informasi', [PublicController::class, 'media']);
-Route::get('/post', [PostController::class], 'all_post');
 
+// Route::any('{slug}', function () {
+//     return view('welcome');
+// });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index']);
