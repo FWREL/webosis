@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [PublicController::class, 'index']);
 Route::get('/media-informasi', [PublicController::class, 'media']);
+Route::get('/post', [PostController::class], 'all_post');
 
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function() {
