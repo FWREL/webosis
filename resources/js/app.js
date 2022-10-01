@@ -1,6 +1,16 @@
-import { createApp } from "vue";
-import Welcome from "./components/Welcome.vue";
+import './bootstrap';
+import { createApp } from "vue/dist/vue.esm-bundler.js";
 
-const app = createApp;
+import DashboardComponent from "./components/Dashboard.vue";
+import CategoryComponent from "./components/Category.vue";
 
-app(Welcome).mount("#app");
+import router from "./router/index"
+const app = createApp({
+    components: {
+        DashboardComponent,
+        CategoryComponent,
+    }
+});
+
+app.use(router) 
+app.mount('#app')

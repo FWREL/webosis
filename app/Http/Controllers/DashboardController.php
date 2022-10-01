@@ -8,6 +8,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        return view('admin.dashboard');
+    }
+
+    public function category()
+    {
+        return view('admin.category');
     }
 }

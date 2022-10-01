@@ -17,9 +17,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('media-informasi', function () {
 //     return view('media');
@@ -34,6 +34,7 @@ Route::get('/media-informasi', [PublicController::class, 'media']);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/category', [DashboardController::class, 'index']);
 });
 
 require __DIR__.'/auth.php';

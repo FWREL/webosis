@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('medias', function (Blueprint $table) {
+        Schema::create('mediacategories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('post');
-            $table->string('post_excerpt');
-            $table->string('slug')->unique();
-            $table->string('user_id');
-            $table->string('featuredImage');
-            $table->string('metaDescription');
-            $table->integer('views')->default(0);
+            $table->integer('category_id');
+            $table->integer('media_id');
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medias');
+        Schema::dropIfExists('mediacategories');
     }
 };
