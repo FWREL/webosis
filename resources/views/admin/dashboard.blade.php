@@ -34,7 +34,7 @@
 
 <body class="antialiased">
     <div id="app">
-        <dashboard-component></dashboard-component>
+
     </div>
 
     <!-- Vendor JS Files -->
@@ -49,6 +49,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main-admin.js"></script>
+
 </body>
 
 </html>

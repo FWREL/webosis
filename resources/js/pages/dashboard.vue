@@ -249,9 +249,9 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-                <a href="">
+                <router-link to="/dashboard/category">
                     <i class="bi bi-circle"></i><span>Category</span>
-                </a>
+                </router-link>
             </li>
         </ul>
     </li><!-- End Components Nav -->
@@ -328,5 +328,3 @@
         <router-view />
     </div>
 </template>
-
-<script ></script>

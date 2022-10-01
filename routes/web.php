@@ -21,16 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('media-informasi', function () {
-//     return view('media');
-// });
+// Route::get('/{any}', function () {
+//     return view('welcome');
+// })->where('any','.*');
 
 Route::get('/', [PublicController::class, 'index']);
 Route::get('/media-informasi', [PublicController::class, 'media']);
-
-// Route::any('{slug}', function () {
-//     return view('welcome');
-// });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index']);
